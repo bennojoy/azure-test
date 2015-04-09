@@ -5,12 +5,21 @@ from az_base import Template
 from az_vnet import *
 import requests
 
+<<<<<<< HEAD
 USERN     = '<email>'
 PASSN     = '<pass>'
 CLIENT_SECRET = 'UxxxxxxDkoicj0TCZuk='
 CLIENT_ID     = 'e5f1b4b8df'
 SUB_ID = 'ac0d7bc7-358a-88bb'
 NAME = 'benn'
+=======
+USERN     = 'beft.com'
+PASSN     = 'Bed'
+CLIENT_SECRET = 'UtFBxCTAVX02fBCEB8Dkoicj0TCZuk='
+CLIENT_ID     = 'e5bb-a311-b801858a08df'
+SUB_ID = 'ac0d7bc7-d0888bb'
+NAME = 'bennn'
+>>>>>>> 675fa0c... remove
 RES_GROUP = 'bentest'
 put_url = 'https://management.azure.com/subscriptions/' + SUB_ID + '/resourceGroups/' + RES_GROUP + '/providers/Microsoft.ClassicNetwork/virtualNetworks/' + NAME + '?api-version=2014-06-01'
 conn = az_conn.AzureConn(user=USERN, password=PASSN, client_id=CLIENT_ID, client_secret=CLIENT_SECRET)
