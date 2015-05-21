@@ -237,8 +237,9 @@ def main():
             delete_resource(conn, put_url, wait_tmout, module)
             
     #Not delete so create or check if it exists
-    address_space  = dict(addressPrefixes=address)
-    dns            = dict(dnsServers=dns)
+    address_space      = dict(addressPrefixes=address)
+    if dns:
+        dns            = dict(dnsServers=dns)
 
     # Azure expects the subnet to have the key addressPrefix, so lets substitute subnet with addressPrefix
     for idx, val in enumerate(subnets):
@@ -281,6 +282,7 @@ def main():
             vnet_current['properties'].pop('dhcpOptions')
         if not s_vpn:
             vnet_current['properties'].pop('gatewayProfile')
+#        module.exit_json(cur=vnet_current, az=vnet_data)
         if cmp_dict(vnet_current, vnet_data):
             res_json  = resource_status(conn, put_url, 'get_json', 0, module)
             module.exit_json(changed=False, res=res_json) 
